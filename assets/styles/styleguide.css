@@ -1,0 +1,55 @@
+.text{
+    font-family: 'Reem Kufi', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.subtitle{
+    font-family: 'Satisfy', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 52px;
+}
+
+.list-card-text{
+    font-family: 'Reem Kufi', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 119.9%;
+}
+
+.msg-card-text{
+    font-family: 'Reem Kufi', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.button-primary{
+    background: #F4A83F;
+    border-radius: 40px;
+    padding: 8px 80px;
+    color: white;
+    border: none;
+}
+
+.main-yellow{
+    color: #F4A83F;
+}
+.main-black{
+    color: #4E4E4E;
+}
+.main-grey{
+    color: #808080;
+}
+.msg-text-color{
+    color: #ACACAC;
+}
+.black{
+    color: #000000;
+}

@@ -1,0 +1,40 @@
+.footer{
+    border-top: 1px solid #f3d988;
+}
+
+.footer-text-container{
+    text-align: center;
+    padding: 120px 0px 80px;
+}
+
+.sunflower-container{
+    display: flex;
+    justify-content: center;
+    margin: -70px 0px -80px;
+}
+
+.sunflower-container .sunflower{
+    height: 140px;
+}
+.link{
+    text-decoration: underline;
+}
+
+.link:hover{
+    text-decoration: underline;
+    color: #F4A83F;
+}
+
+.footer-made-by{
+    margin-bottom: 40px;
+}
+
+.footer-special-thanks{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-special-thanks p {
+    margin: 0px 8px;
+}
