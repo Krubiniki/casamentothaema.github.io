@@ -115,11 +115,7 @@
             
             <section id="message" class="section">
                 <h2 class="subtitle main-yellow">Nosso mural</h2>
-                <div class="message-cards-container">
-                    <div id="msgCard" class="message-card">
-                        <p id="msgCardName" class="text main-yellow"></p>
-                        <p id="msgCardText" class="msg-card-text msg-text-color"></p>
-                    </div>
+                <div id="msgCards" class="message-cards-container">
                 </div>
                 <div class="message-text-container">
                     <div class="message">
@@ -132,10 +128,10 @@
                     </div>
                 </div>
                 <div class="message-cards-container-mobile">
-                    <div id="msgCard" class="message-card">
+                    <!-- <div id="msgCard" class="message-card">
                         <p id="msgCardName" class="text main-yellow"></p>
                         <p id="msgCardText" class="msg-card-text msg-text-color"></p>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </main>
@@ -156,24 +152,51 @@
             </div>
         </footer>
     </body>
-</html>
-
-<script>
-    // Initialize Cloud Firestore through Firebase
-    firebase.initializeApp({
-        apiKey: 'AIzaSyAkoEg6mVZwhUpKKsETgufaKAupFUZqANs',
-        authDomain: 'wedding-5ac36.firebaseapp.com',
-        projectId: 'wedding-5ac36'
-    });
-
-    var message_db = firebase.firestore();
+    </html>
     
-    const msgCard = document.querySelector("#msgCard");
-    const msgCardName = document.querySelector("#msgCardName");
-    const msgCardText = document.querySelector("#msgCardText");
-    const nameInput = document.querySelector("#nameInput");
-    const textInput = document.querySelector("#textInput");
-    const sendButton = document.querySelector("#sendButton");
+    <script>
+        // Initialize Cloud Firestore through Firebase
+        firebase.initializeApp({
+            apiKey: 'AIzaSyAkoEg6mVZwhUpKKsETgufaKAupFUZqANs',
+            authDomain: 'wedding-5ac36.firebaseapp.com',
+            projectId: 'wedding-5ac36'
+        });
+        
+        const cardContainer = document.getElementById("msgCards")
+        const msgCard = document.querySelector("#msgCard");
+        const msgCardName = document.querySelector("#msgCardName");
+        const msgCardText = document.querySelector("#msgCardText");
+        const nameInput = document.querySelector("#nameInput");
+        const textInput = document.querySelector("#textInput");
+        const sendButton = document.querySelector("#sendButton");
+        
+        var message_db = firebase.firestore();
+        var messagesData = message_db.collection("messages").get().then((querySnapshot) => {
+        querySnapshot.forEach((message) => {
+            messageCard = document.createElement('div')
+            messageCard.className = "message-card"
+
+            messageCardName = document.createElement('p')
+            messageCardName.className = "text main-yellow"
+            messageCardName.innerHTML = message.data().name
+
+            messageCardText = document.createElement('p')
+            messageCardText.className = "msg-card-text msg-text-color"
+            messageCardText.innerHTML = message.data().text
+
+            messageCard.appendChild(messageCardName,);
+            messageCard.appendChild(messageCardText);
+
+
+            cardContainer.appendChild(messageCard)
+
+            console.log(message.id, " => ", message.data());
+        });
+        // adicionar o catch error para caso tenha problema em puxar do firestore + mostrar feedback no msgCards
+        //     .catch((error) => {
+        //     console.log("Error getting documents: ", error);
+        // });
+    })    
     
     function loading(isLoading,htmlButtonElement,condition){
         if(isLoading == true){
@@ -208,6 +231,7 @@
             }).then(function(){
                 loading(false,sendButton,'success')
                 console.log("Mensagem salva")
+                // adicionar o novo elemento html na lista de cards
             }).catch(function(error){
                 loading(false,sendButton,'error')
                 console.log("Ocorreu algum erro: ",error)
