@@ -184,13 +184,10 @@
             messageCardText.className = "msg-card-text msg-text-color"
             messageCardText.innerHTML = message.data().text
 
-            messageCard.appendChild(messageCardName,);
+            messageCard.appendChild(messageCardName);
             messageCard.appendChild(messageCardText);
 
-
             cardContainer.appendChild(messageCard)
-
-            console.log(message.id, " => ", message.data());
         });
         // adicionar o catch error para caso tenha problema em puxar do firestore + mostrar feedback no msgCards
         //     .catch((error) => {
