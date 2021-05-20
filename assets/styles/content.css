@@ -236,6 +236,12 @@ html, body{
     padding: 16px 21px;
 }
 
+.error-message-container{
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto 40px;
+}
+
 .show-on-mobile{
     display: none;
 }
