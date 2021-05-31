@@ -202,6 +202,11 @@ html, body{
     background-color: white;
     margin: 0px 18px 32px;
     border: 1px solid #F4A83F;
+    height: 100%;
+}
+
+.message-card-text{
+    word-break: break-all;
 }
 
 .message-text-container{

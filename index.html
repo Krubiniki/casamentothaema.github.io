@@ -47,9 +47,13 @@
                         <img src="assets/imgs/name-title.jpg" alt="Mathews e Thaís" class="img-mobile title-names"/>
                         <img src="assets/imgs/banner-home.jpg" alt="Banner Home" class="show-on-mobile img-mobile"/>
                         <p class="text main-black">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Está chegando o momento de celebrar a nossa união, após 10 anos de muito companherismo, amor e amizade, queremos a sua presença para compartilhar da nossa alegria.
+                            <br>
+                            Fizemos esse site para mostrar algumas informações importantes do dia que vamos comemorar nosso amor. Então vamos pular essa burocracia e curtir juntos esse momento!
                             <br><br>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Bem-vindos ao nosso site.
+                            <br>
+                            Com carinho, Tha e Ma <img src="assets/imgs/favicon.png" alt="heart icon" style="height: 22px; margin-bottom: 8px;">
                         </p>
                     </div>
                     <div class="home-banner-container">
@@ -86,7 +90,8 @@
             <section id="lists" class="section">
                 <div class="lists-text-container">
                     <h1 class="subtitle main-yellow">Lista de Presentes</h1>
-                    <p class="text main-black">Quer dar um presente de casamento para gente, mas não sabe o que dar ou não quer nem sair de casa para comprar, veja o catálogo abaixo:</p>
+                    <p class="text main-black">Quer dar um presente de casamento para gente, mas não sabe o que dar ou não quer nem sair de casa para comprar, veja as opções abaixo:</p>
+                    <p class="text main-black" style="font-size:14px">Obs.: Essas listas são apenas sugestões, fique a vontade caso queira nos presentear de outra forma.</p>
                 </div>
                 <div class="lists-cards-container">
                     <a class="item-card" href="https://listadecasamento.fastshop.com.br/lista/casamentothaema" target="_blank" rel="nofollow">
@@ -120,7 +125,7 @@
                         <p class="text">Quer deixar uma recado no nosso mural?<br>Vamos ficar muito felizes em ler sua mensagem!</p>
                     </div>
                     <div class="message-input-container">
-                        <input id="nameInput" type="text" name="nome" class="message-input text msg-text-color" placeholder="Nome">
+                        <input id="nameInput" type="text" name="nome" class="message-input text msg-text-color" placeholder="Nome" maxlength="25">
                         <textarea id="textInput" name="texto" cols="30" rows="8" class="message-textarea text msg-text-color" placeholder="Escreva sua mensagem... (até 400 caracteres)" maxlength="400"></textarea>
                         <button id="sendButton" class="button-primary text">ENVIAR</button>
                     </div>
@@ -134,13 +139,13 @@
             </div>
             <div class="footer-text-container">
                 <div class="footer-made-by">
-                    <p class="text main-black">Feito com carinho por Mathews Krubiniki e Thaís Castro</p>
+                    <p class="text main-black">Desenvolvido por Mathews Krubiniki e Thaís Castro</p>
                 </div>
-                <p class="text main-black">Agradecimentos especiais para:</p>
+                <p class="text main-black" style="font-size: 16px;">Agradecimentos especiais para:</p>
                 <div class="footer-special-thanks">
-                    <a href="https://www.linkedin.com/in/renato-haidamous-rampazzo-7aa648101/" target="_blank" rel="nofollow" class="text link main-black">Renato Haidamous (Desenvolvedor)</a>
+                    <a href="https://www.linkedin.com/in/renato-haidamous-rampazzo-7aa648101/" target="_blank" rel="nofollow" class="text link main-black" style="font-size: 16px;">Renato Haidamous (Desenvolvedor)</a>
                     <p class="text main-black">e</p>
-                    <a href="https://www.linkedin.com/in/gustavo-bastos-012b49140/" target="_blank" rel="nofollow" class="text link main-black">Gustavo Bastos (Designer)</a>
+                    <a href="https://www.linkedin.com/in/gustavo-bastos-012b49140/" target="_blank" rel="nofollow" class="text link main-black" style="font-size: 16px;">Gustavo Bastos (Designer)</a>
                 </div>
             </div>
         </footer>
@@ -148,7 +153,6 @@
     </html>
     
     <script>
-        
         const cardContainer = document.getElementById("msgCards")
         const cardContainerMobile = document.getElementById("msgCardsMobile")
         const msgCard = document.querySelector("#msgCard");
@@ -225,11 +229,11 @@
             messageCard.className = "message-card"
             
             messageCardName = document.createElement('p')
-            messageCardName.className = "text main-yellow"
+            messageCardName.className = "text main-yellow message-card-text"
             messageCardName.innerHTML = name
             
             messageCardText = document.createElement('p')
-            messageCardText.className = "msg-card-text msg-text-color"
+            messageCardText.className = "msg-card-text msg-text-color message-card-text"
             messageCardText.innerHTML = text
             
             messageCard.appendChild(messageCardName);
