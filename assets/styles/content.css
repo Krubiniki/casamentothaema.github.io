@@ -374,7 +374,8 @@ html, body{
     }
     .message-cards-container-mobile{
         max-width: 880px;
-        margin: 40px auto 106px;
+        margin: 40px auto 0px;
+        padding-bottom: 106px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
